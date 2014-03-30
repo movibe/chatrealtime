@@ -24,8 +24,22 @@
  <div class="container">
 
 	<div class="row">
-		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<!-- Chat -->
+			<div id="chat">
+				<ul></ul>
+			</div>
+			<div id="chat-text-box">
+				<form action="" id="form-enviar-mensagem">
+					<div class="form-group">
+						<input type="text" id="mensagem" placeholder="O que você está pensando?">
+					</div>
+					<button type="submit" class="btn btn-success">Enviar</button>
+				</form>
+			</div>
+		</div>
 		<div class="col-lg-8">
+			<!-- Updates -->
 			<form role="form" id="form-alterar-nome">
 			  <div class="form-group">
 			    <label for="nome">Alterar Nome:</label>
@@ -34,11 +48,6 @@
 			  
 			  <button type="submit" class="btn btn-default">Alterar</button>
 			</form>
-
-			<h2>
-				Updates
-			</h2>
-			<ul id="updates"></ul>
 		</div>
 	</div>
 </div>

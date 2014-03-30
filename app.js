@@ -76,4 +76,26 @@ io.sockets.on( 'connection', function ( socket ) {
 
 	} );
 
+	socket.on( 'send message', function ( data ) {
+		var message = data.message;
+		var nome = "";
+
+		socket.get( 'username', function ( err, username ) {
+			// Se não tiver usename usa o userid
+			nome = username ? username : userid;
+
+			socket.emit( 'message sent', {
+				name: nome,
+				message: message
+			} );
+
+			socket.broadcast.emit( 'message sent by user', {
+				name: nome,
+				message: message
+			} );
+
+
+		} )
+	} )
+
 } );

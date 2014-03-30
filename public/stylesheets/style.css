@@ -5,3 +5,8 @@ body {
 a {
   color: #00b7ff;
 }
+#chat {
+  border: 1px solid #ccc;
+  min-height: 300px;
+  margin-bottom: 30px;
+}
