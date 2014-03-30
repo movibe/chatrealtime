@@ -52,4 +52,27 @@ io.sockets.on( 'connection', function ( socket ) {
 		userid: userid
 	} );
 
+	socket.on( 'change name', function ( data ) {
+		// Variavel nome do input form
+		var nome = data.nome;
+
+		// Faz um set em username com o variavel nome
+		socket.set( 'username', nome, function () {
+
+			// Mensagem para o usuario que o nome dele foi alterado
+			socket.emit( 'changed name', {
+				nome: nome
+			} );
+
+			// Mensagem para todos os usuarios que o nome de outro foi alterado	
+			socket.broadcast.emit( 'user changed name', {
+				userid: userid,
+				nome: nome
+			} );
+
+
+		} );
+
+	} );
+
 } );
