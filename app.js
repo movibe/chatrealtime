@@ -39,14 +39,16 @@ var server = http.createServer( app ).listen( app.get( 'port' ), function () {
 
 var io = require( 'socket.io' ).listen( server );
 
-io.sockets.on( 'connection', function () {
+io.sockets.on( 'connection', function ( socket ) {
+
+	// Id do usuário
 	var userid = socket.id;
 
 	// Mostra mensagem para o usuario
-	sockets.emit( 'welcome' );
+	socket.emit( 'welcome' );
 
 	// Mostra mensagem para todos os usuarios
-	sockets.broadcast( 'user in', {
+	socket.broadcast.emit( 'user in', {
 		userid: userid
 	} );
 

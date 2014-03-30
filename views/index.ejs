@@ -5,6 +5,9 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <!-- SOCKET IO -->
     <script src="/socket.io/socket.io.js"></script>
+	<!-- JQUERY -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
     <!-- BOOTSTRAP -->
     <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -14,13 +17,20 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<!-- JQUERY -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- CLIENT SERVER -->
-    <script src="/javascript/clientside.js"></script>
+    <script src="/javascripts/clientside.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-lg-8">
+    				
+    		</div>
+    		<div class="col-lg-4">
+    			<h2>Updates</h2>
+    			<ul id="updates"></ul>
+    		</div>
+    	</div>
+    </div>
   </body>
 </html>
