@@ -61,6 +61,7 @@ io.sockets.on( 'connection', function ( socket ) {
 
 			// Mensagem para o usuario que o nome dele foi alterado
 			socket.emit( 'changed name', {
+				userid: userid,
 				nome: nome
 			} );
 
